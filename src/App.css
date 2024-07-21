@@ -1,15 +1,14 @@
 /* LandingPage.css */
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
+  padding-top: 0;
+  /* box-sizing: border-box; */
 }
 
 .landing-page {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100vw;
   background-color: #f8f8f8;
 }
 
@@ -20,31 +19,31 @@
   width: 100%;
   height: 100%;
   background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   filter: brightness(0.8);
 }
+
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
- top: 100px;
+  top: 100px;
   backdrop-filter: blur(4px);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   gap: 20px;
 }
 
 .landing_content {
- margin-top: 430px;
-  margin-left: 100px;
-  transform: translate(-50%, -50%);
+  margin-top: 50%;
+  margin-left: 0;
+  transform: translateY(-50%);
   z-index: 1;
   text-align: center;
-  /* background-color: red; */
-  width: 400px;
-  height: 400px;
+  width: 80%;
+  max-width: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -58,12 +57,12 @@
 }
 
 .content h1 {
-  font-size: 48px;
+  font-size: 3rem; /* responsive units */
   margin-bottom: 10px;
 }
 
 .content p {
-  font-size: 25px;
+  font-size: 1.5rem; /* responsive units */
 }
 
 .divider {
@@ -75,7 +74,7 @@
 
 .get-started-button {
   padding: 15px 25px;
-  font-size: 23px;
+  font-size: 1.5rem; /* responsive units */
   border: none;
   border-radius: 5px;
   background-color: #4caf50;
@@ -90,30 +89,26 @@
 }
 
 /* ProductList.css */
-
 .product-list-container {
   position: absolute;
   overflow-x: hidden;
   top: 100vh;
-  /* Initially off-screen */
   left: 0;
+  padding-left: 20px;
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.9);
-  /* Adjust background opacity as needed */
   transition: top 0.5s ease;
-  /* Smooth transition for top property */
   overflow-y: auto;
-  /* Enable vertical scrolling */
   z-index: 2;
-  /* Ensure it's above landing page content */
   backdrop-filter: blur(5px);
 }
 
 .product-list-container.visible {
   top: 0;
 }
-/* LandingPage.css */
+
+/* Media Queries */
 @media screen and (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -123,25 +118,16 @@
   }
 
   .landing_content {
-    margin-top: 100px; /* Adjust as needed */
-    margin-left: 0;
-    width: 80%; /* Adjust as needed */
+    margin-top: 10%; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
     text-align: center;
-  }
-
-  .aboutus_container {
-    margin-top: 20px; /* Adjust as needed */
-    width: 80%; /* Adjust as needed */
+    padding-right: 50px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .landing_content {
-    margin-top: 50px; /* Adjust as needed */
-    width: 90%; /* Adjust as needed */
-  }
-
-  .aboutus_container {
+    margin-top: 20px; /* Adjust as needed */
     width: 90%; /* Adjust as needed */
   }
 }
